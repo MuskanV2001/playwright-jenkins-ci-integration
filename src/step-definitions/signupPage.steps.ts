@@ -1,8 +1,8 @@
 import { createBdd } from 'playwright-bdd';
 import { expect } from '@playwright/test';
-import { customtest } from '../fixtures/appFixtures';
+import { test } from '../fixtures/appFixtures';
 
-const { Given, When, Then } = createBdd(customtest);
+const { Given, When, Then } = createBdd(test);
 
 
 Given("User is navigated to the SignUp page", async({signUpPagehelper}) => {
