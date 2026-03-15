@@ -6,6 +6,7 @@ export class HomePageHelper{
     private homePagepo: HomePagePO;
 
     constructor(private page: Page){
+        this.page = page;
         this.homePagepo = new HomePagePO(page);
     }
 

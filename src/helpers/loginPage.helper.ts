@@ -37,7 +37,7 @@ export class LoginPageHelper{
     async enterEmailSignUp(){
         try{
             await this.loginPagepo.newuseremail.isVisible();
-            await this.loginPagepo.newuseremail.fill("alex01@gmail.com")
+            await this.loginPagepo.newuseremail.fill("alex01@gmail.com");
             console.log("Entered New User Email");
             return true;
         }
