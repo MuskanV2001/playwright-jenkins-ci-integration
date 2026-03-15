@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test-saucelabs": "bddgen && playwright test --project=chromium",
-    "test": "playwright test --project=chromium --headed",
+    "test": "playwright test --project=chromium --headed && playwright show-report",
     "test-firefox": "playwright test --project=firefox"
   },
   "keywords": [],
