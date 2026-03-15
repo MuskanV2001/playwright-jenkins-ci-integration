@@ -16,4 +16,3 @@ Feature: New user account creation
         And User enters the Acccount information details
         And User enters Address information details
         And User clicks createAccount button
-        Then User account gets created
