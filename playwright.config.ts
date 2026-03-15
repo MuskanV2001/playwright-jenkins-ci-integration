@@ -5,8 +5,7 @@ const testDir = defineBddConfig({
   features: 'src/features/*.feature',
   steps: [
     'src/step-definitions/*.steps.ts',
-    'src/fixtures/appFixtures.ts'
-  ],
+    'src/fixtures/appFixtures.ts'],
   outputDir: '.features-gen'
 });
 
