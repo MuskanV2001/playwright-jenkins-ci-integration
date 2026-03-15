@@ -11,6 +11,9 @@ export class HomePageHelper{
 
      async verifyHomePage(){
         try{
+            await this.homePagepo.homeNavOption.isVisible();
+            await this.homePagepo.signUpOption.isVisible();
+            console.log("Landed on Home Page")
             return true;
         }
         catch(error){
@@ -21,6 +24,8 @@ export class HomePageHelper{
 
     async clickSignUpLink(){
         try{
+            await this.homePagepo.signUpOption.click();
+            console.log("Clicked Signup")
             return true;
         }
         catch(error){

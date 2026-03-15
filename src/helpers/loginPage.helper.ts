@@ -11,6 +11,8 @@ export class LoginPageHelper{
 
     async verifyLoginPage(){
         try{
+            await this.loginPagepo.newusersignupheader.isVisible();
+            console.log("Landed on login Page");
             return true;
         }
         catch(error){
@@ -21,6 +23,9 @@ export class LoginPageHelper{
 
     async enterNameSignUp(){
        try{
+            await this.loginPagepo.newusername.isVisible();
+            await this.loginPagepo.newusername.fill("Alex");
+            console.log("Entered New User Name");
             return true;
         }
         catch(error){
@@ -31,6 +36,9 @@ export class LoginPageHelper{
 
     async enterEmailSignUp(){
         try{
+            await this.loginPagepo.newuseremail.isVisible();
+            await this.loginPagepo.newuseremail.fill("alex01@gmail.com")
+            console.log("Entered New User Email");
             return true;
         }
         catch(error){
@@ -41,6 +49,9 @@ export class LoginPageHelper{
 
     async clickSignUpButton(){
         try{
+            await this.loginPagepo.signupbutton.isEnabled();
+            await this.loginPagepo.signupbutton.click();
+            console.log("Clicked SignUp button");
             return true;
         }
         catch(error){
