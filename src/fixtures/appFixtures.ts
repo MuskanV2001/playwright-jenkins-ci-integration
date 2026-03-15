@@ -1,4 +1,4 @@
-import {test as basetest} from '@playwright/test';
+import {test as basetest} from 'playwright-bdd';
 
 import { HomePageHelper } from '../helpers/homePage.helper';
 import { LoginPageHelper } from '../helpers/loginPage.helper';
@@ -10,7 +10,7 @@ type AppFixtures = {
     signUpPagehelper: SignupPageHelper;
 }
 
-export const customtest = basetest.extend<AppFixtures>({
+export const test = basetest.extend<AppFixtures>({
     
     homePagehelper: async ({ page }, use) => {
         await use(new HomePageHelper(page));
