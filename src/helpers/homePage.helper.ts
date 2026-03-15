@@ -9,7 +9,11 @@ export class HomePageHelper{
         this.homePagepo = new HomePagePO(page);
     }
 
-     async verifyHomePage(){
+    async gotoHomePage(){
+        await this.page.goto("https://automationexercise.com/");
+    }
+
+    async verifyHomePage(){
         try{
             await this.homePagepo.homeNavOption.isVisible();
             await this.homePagepo.signUpOption.isVisible();
