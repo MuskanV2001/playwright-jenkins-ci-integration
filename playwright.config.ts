@@ -2,8 +2,12 @@ import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd'; /*Acts as a translator between Gherkin and Playwright*/
 
 const testDir = defineBddConfig({
-  features: 'features/**/*.feature',
-  steps: 'steps/**/*.steps.ts'
+  features: 'src/features/*.feature',
+  steps: [
+    'src/step-definitions/*.steps.ts',
+    'src/fixtures/appFixtures.ts'
+  ],
+  outputDir: '.features-gen'
 });
 
 export default defineConfig({
