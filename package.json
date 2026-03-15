@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test-saucelabs": "bddgen && playwright test --project=chromium",
+    "test": "playwright test --project=chromium --headed",
+    "test-firefox": "playwright test --project=firefox"
   },
   "keywords": [],
   "author": "",
