@@ -1,15 +1,32 @@
+import { Page } from 'playwright/test';
 import { HomePagePO } from '../pages/homePage.po';
-
-// const homePagepo = new HomePagePO();
 
 export class HomePageHelper{
 
+    private homePagepo: HomePagePO;
+
+    constructor(private page: Page){
+        this.homePagepo = new HomePagePO(page);
+    }
+
      async verifyHomePage(){
-        return true;
+        try{
+            return true;
+        }
+        catch(error){
+            console.log(error);
+            return false;
+        }
     }
 
     async clickSignUpLink(){
-        return true;
+        try{
+            return true;
+        }
+        catch(error){
+            console.log(error);
+            return false;
+        }
     }
     
 }

@@ -1,22 +1,22 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { createBdd } from 'playwright-bdd';
 import { expect } from '@playwright/test';
-import { page } from '../hooks/browserSetup.ts';
-import { SignupPageHelper } from '../helpers/signupPage.helper.ts';
+import { customtest } from '../fixtures/appFixtures';
 
-const signUpPagehelper = new SignupPageHelper(page);
+const { Given, When, Then } = createBdd(customtest);
 
-Given("User is navigated to the SignUp page", async() => {
+
+Given("User is navigated to the SignUp page", async({signUpPagehelper}) => {
     expect(await signUpPagehelper.verifySignUpPage()).toBeTruthy();
 });
 
-Given("User enters the Acccount information details", async() => {
+Given("User enters the Acccount information details", async({signUpPagehelper}) => {
     expect(await signUpPagehelper.enterAccountInfoDetails()).toBeTruthy();
 });
 
-Given("User enters Address information details", async() => {
+Given("User enters Address information details", async({signUpPagehelper}) => {
     expect(await signUpPagehelper.enterAddressInfoDetails()).toBeTruthy();
 });
 
-Given("User clicks createAccount button", async() => {
+Given("User clicks createAccount button", async({signUpPagehelper}) => {
     expect(await signUpPagehelper.clickCreateAccountBtn()).toBeTruthy();
 });

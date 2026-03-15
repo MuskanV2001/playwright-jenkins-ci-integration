@@ -1,12 +1,13 @@
-import { Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 export class HomePagePO{
 
-    private page: Page;
+    readonly homeNavOption: Locator;
+    readonly signUpOption: Locator;
 
-    constructor(page: Page){
-        this.page = page;
-    }
-    
+    constructor(private page: Page){
+        this.homeNavOption = page.locator("//a[contains(text(),' Home')]");
+        this.signUpOption = page.locator("//a[@href='/login']");
+    }    
    
 }

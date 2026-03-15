@@ -1,9 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import { defineBddConfig } from 'playwright-bdd'; /*Acts as a translator between Gherkin and Playwright*/
 
+const testDir = defineBddConfig({
+  features: 'features/**/*.feature',
+  steps: 'steps/**/*.steps.ts'
+});
 
 export default defineConfig({
 
-  testDir: './tests',
+  testDir,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -16,11 +21,9 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    headless: false,
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure'
   },
 
   /* Configure projects for major browsers */

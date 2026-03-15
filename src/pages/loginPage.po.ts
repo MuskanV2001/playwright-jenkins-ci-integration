@@ -1,12 +1,16 @@
-import { Page } from '@playwright/test';
+import { Locator, Page } from '@playwright/test';
 
 export class LoginPagePO{
 
-    private page: Page;
+    readonly newusersignupheader: Locator;
+    readonly newusername: Locator;
+    readonly newuseremail: Locator;
+    readonly signupbutton: Locator;
 
-    constructor(page: Page){
-        this.page = page;
+    constructor(private page: Page){
+        this.newusersignupheader = page.locator("//h2[contains(text(),'New User Signup')]");
+        this.newusername = page.locator("//input[@placeholder='Name']");
+        this.newuseremail = page.locator("//input[@placeholder='Email Address']");
+        this.signupbutton = page.locator("//button[@data-qa='signup-button']")
     }
-    
-   
 }

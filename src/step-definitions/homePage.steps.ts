@@ -1,14 +1,13 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { createBdd } from "playwright-bdd";
 import { expect } from '@playwright/test';
-import { page } from '../hooks/browserSetup.ts';
-import { HomePageHelper } from '../helpers/homePage.helper.ts';
+import { customtest } from "../fixtures/appFixtures";
 
-const homePagehelper = new HomePageHelper(page);
+const { Given, When, Then } = createBdd(customtest);
 
-Given("User is on the Home page", async() => {
+Given("User is on the Home page", async({homePagehelper}) => {
     expect(await homePagehelper.verifyHomePage()).toBeTruthy();
 });
 
-When("User clicks on the Signup link in the top navigation bar", async() => {
+When("User clicks on the Signup link in the top navigation bar", async({homePagehelper}) => {
     expect(await homePagehelper.clickSignUpLink()).toBeTruthy();
 });
