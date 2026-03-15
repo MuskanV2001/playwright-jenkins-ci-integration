@@ -5,6 +5,7 @@ import { test } from "../fixtures/appFixtures";
 const { Given, When, Then } = createBdd(test);
 
 Given("User is on the Home page", async({homePagehelper}) => {
+    await homePagehelper.gotoHomePage();
     expect(await homePagehelper.verifyHomePage()).toBeTruthy();
 });
 
