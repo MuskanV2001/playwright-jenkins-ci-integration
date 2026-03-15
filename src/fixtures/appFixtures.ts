@@ -13,7 +13,10 @@ type AppFixtures = {
 export const test = basetest.extend<AppFixtures>({
     
     homePagehelper: async ({ page }, use) => {
-        await use(new HomePageHelper(page));
+        console.log("Launching the application..");
+        const homePagehlp = new HomePageHelper(page);
+        await use(homePagehlp);
+        await homePagehlp.gotoHomePage();
     },
 
     loginPagehelper: async ({ page }, use) => {
