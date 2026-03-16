@@ -17,5 +17,8 @@
     "@types/node": "^25.5.0",
     "playwright": "^1.58.2",
     "playwright-bdd": "^8.5.0"
+  },
+  "dependencies": {
+    "saucectl": "^0.202.0"
   }
 }

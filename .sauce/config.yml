@@ -1,0 +1,22 @@
+apiVersion: v1alpha
+kind: playwright
+
+metadata:
+  name: playwright-jenkins-ci-integration
+
+playwright:
+  version: 1.58.1
+  configFile: playwright.config.ts
+
+sauce:
+  region: eu-central-1
+
+rootDir: .
+
+suites:
+  - name: "Chrome Windows"
+    platformName: "Windows 11"
+    screenResolution: "1440x900"
+    testMatch: ["*.spec.js"]
+    params:
+      browserName: "chromium"
