@@ -5,6 +5,7 @@ Feature: New user account creation
         When User clicks on the Signup link in the top navigation bar
         Then User is navigated to the Login page
 
+    @E2E
     Scenario: New user account creation flow
         Given User is on the Home page 
         When User clicks on the Signup link in the top navigation bar
